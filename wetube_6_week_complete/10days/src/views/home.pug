@@ -1,0 +1,11 @@
+extends layouts/layout.pug
+include mixins/movieBlock
+
+block content
+  h1 today movies
+  .movie-title 
+    each movie in movies
+      +movieBlock({
+        title:movie.title,
+        id:movie.id
+      })
