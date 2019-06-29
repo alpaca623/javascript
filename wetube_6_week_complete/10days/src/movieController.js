@@ -22,16 +22,16 @@ export const movieDetail = async (req, res, next) => {
   }
 };
 export const filterMovie = (req, res) => {
-  // const { params } = Object.keys(req.query);
-  let key = Object.keys(req.query);
-  let param;
-  let movies = {};
-  if (key[0] === "year") {
-    param = req.query["year"];
+  const {
+    query: { year, rating }
+  } = req;
+  let data = "";
+  if (year) {
+    data = year;
   }
-  if (key[0] === "rating") {
-    param = req.query["rating"];
+  if (rating) {
+    data = rating;
   }
-  movies = getMovieByMinimumYear(param);
+  const movies = getMovieByMinimumYear(data);
   res.render("home", { movies });
 };
