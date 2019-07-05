@@ -1,0 +1,17 @@
+extends layouts/layout
+include mixins/movieTitle
+
+block content
+  .container
+    a(href="/create") 영화 추가
+
+    .movie__list
+      ul.movies
+        if(movies.length !== 0)
+          each item in movies
+            +movieTitle({
+              title:item.title,
+              id:item._id
+            })
+        else
+          li 등록된 영화가 없습니다.

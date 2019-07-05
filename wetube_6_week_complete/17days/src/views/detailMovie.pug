@@ -1,0 +1,23 @@
+extends layouts/layout
+
+block content
+  .movie__title
+    h2=movie.title
+  .movie__year
+    h4=movie.year
+  .movie__rating
+    h4=movie.rating
+  .movie__synopsis
+    h4=movie.synopsis
+  .movie__genres
+    span.genres__title
+      strong 장르 목록
+        each item in movie.genres
+          h5=item
+  .movie__setup
+    .update__btn
+      a(href="/"+movie._id+"/edit")
+        button 수정
+    .delete__btn
+      a(href="/"+movie._id+"/delete")
+        button 삭제

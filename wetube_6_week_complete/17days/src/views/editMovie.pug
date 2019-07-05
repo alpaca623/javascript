@@ -1,0 +1,12 @@
+extends layouts/layout
+
+block content
+  h3 영화 수정하기
+    form(action="/edit", method="POST")
+      .add__movie
+        input(type="text", name="title" placeholder="제목을 입력하세요." value=movie.title)
+        input(type="text", name="year" placeholder="개봉연도을 입력하세요." value=movie.year)
+        input(type="text", name="rating" placeholder="평점을 입력하세요." value=movie.rating)
+        input(type="text", name="synopsis" placeholder="시놉시스를 입력하세요." value=movie.synopsis)
+        input(type="text", name="genresArray" placeholder="장르를 ,를 통해 입력하세요." value=movie.genres)
+        input(type="submit" value="영화 수정")
