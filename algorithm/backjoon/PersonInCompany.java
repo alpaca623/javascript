@@ -1,5 +1,3 @@
-package algorithm.backjun;
-
 import java.io.*;
 import java.util.*;
 
@@ -12,13 +10,13 @@ public class PersonInCompany {
         try {
             int N = Integer.parseInt(br.readLine());
             for(int i = 0; i<N; i++){
-                String person = br.readLine();
+                String[] person = br.readLine().split(" ");
 
-                if(person.indexOf("enter") != -1){
-                    list.add(person.replace(" enter",""));
+                if(person[1].equals("enter")){
+                    list.add(person[0]);
                 }
-                if(person.indexOf("leave") != -1){
-                    list.remove(person.replace(" leave", ""));
+                if(person[1].equals("leave")){
+                    list.remove(person[0]);
                 }
 //                list.sort(Comparator.comparingInt(o -> o));
             }
@@ -26,6 +24,5 @@ public class PersonInCompany {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }
