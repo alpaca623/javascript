@@ -13,7 +13,7 @@ const movieRouter = express.Router();
 
 // Add your magic here!
 movieRouter.get("/", getHome);
-movieRouter.get("/search/:param", getSearch);
+movieRouter.get("/search", getSearch);
 movieRouter.get("/create", getCreate);
 movieRouter.post("/create", postCreate);
 movieRouter.get("/:id", getDetail);

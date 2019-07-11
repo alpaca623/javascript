@@ -17,7 +17,13 @@ const MovieSchema = mongoose.Schema({
   },
   year: {
     type: String,
-    required: "is Required!"
+    required: "is Required!",
+    validate: [
+      function(year) {
+        return year && typeof year === "number";
+      },
+      "연도는 숫자여야 합니다"
+    ]
   },
   rating: {
     type: Number,
@@ -33,7 +39,7 @@ const MovieSchema = mongoose.Schema({
   },
   uploadedAt: {
     type: Date,
-    default:Date.now,
+    default: Date.now,
     required: "is Required!"
   }
 });

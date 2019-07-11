@@ -1,3 +1,5 @@
+package algorithm.backjoon;
+
 import java.io.*;
 import java.util.*;
 

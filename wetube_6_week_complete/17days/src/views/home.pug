@@ -5,6 +5,18 @@ block content
   .container
     a(href="/create") 영화 추가
 
+    h3 영화 검색
+      
+        .find__movie
+          form(action="/search" method="get")
+            input(type="text" name="year")
+            .find__year
+              button.year__btn(type="submit") 연도로 찾기
+          form(action="/search" method="get")
+            input(type="text" name="rating")
+            .find__rating
+              button.year__btn 별점으로 찾기
+
     .movie__list
       ul.movies
         if(movies.length !== 0)

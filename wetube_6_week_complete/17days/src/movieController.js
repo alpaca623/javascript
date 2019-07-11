@@ -22,7 +22,7 @@ export const getCreate = (req, res) => {
   res.render("createMovie");
 };
 
-export const postCreate = (req, res) => {
+export const postCreate = async (req, res) => {
   const { title, year, rating, synopsis, genresArray } = req.body;
   let genres = [];
   if (genresArray.indexOf(",")) {
@@ -30,30 +30,37 @@ export const postCreate = (req, res) => {
   } else {
     genres = genresArray.trim();
   }
-  console.log(title, year, rating, synopsis, genres);
   try {
-    Movie.create({
+    const newMovie = await Movie.create({
       title,
       year,
       rating,
       synopsis,
       genres
     });
-    // res.json(addMovieResult);
-    res.redirect("/");
+    res.redirect(`/${newMovie._id}`);
   } catch (e) {
     console.log(e);
   }
 };
 
-export const getSearch = (req, res) => {};
+export const getSearch = async (req, res) => {
+  console.log(req.query);
+  const { year, rating } = req.query;
+  let movies = {};
+  if (year) {
+    movies = await Movie.find({ year });
+  }
+  if (rating) {
+    movies = await Movie.find({ rating });
+  }
+  res.render("home", { movies });
+};
 
 export const getEdit = async (req, res) => {
   const { id } = req.params;
   let movie = await Movie.findById(id);
-  console.log(movie);
   movie.genres = movie.genres;
-  console.log(movie.genres);
   res.render("editMovie", { movie });
 };
 
