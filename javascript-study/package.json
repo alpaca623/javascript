@@ -9,7 +9,8 @@
     "@babel/core": "^7.5.5",
     "@babel/node": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "nodemailer": "^6.3.0"
   },
   "scripts": {
     "start": "babel-node index.js"

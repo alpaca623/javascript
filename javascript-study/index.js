@@ -1,2 +1,1 @@
-import './src/test.js';
-console.log('start');
+import './src/mailSend';
