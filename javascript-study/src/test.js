@@ -1,3 +1,7 @@
-import _ from 'lodash';
+import _ from "lodash";
 
-console.log('babel-test');
+import { data } from "./data";
+
+let result = _.chain(data).groupBy('price').value();
+
+console.log(result);

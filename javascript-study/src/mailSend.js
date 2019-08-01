@@ -1,20 +1,25 @@
 import nodemailer from "nodemailer";
 
-const message = {
-  from: "alpaca623@gmail.com",
-  to: "alpaca623@gmail.com",
-  subject: "노드 smtp 메일 전송 테스트",
-  text: "메일 전송 테스트"
-};
-
-let transport = nodemailer.createTransport({
+let transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: "alpaca623@gmail.com",
-    pass: "apdlfxptmxm!"
+    pass: "xptmxmapdlf"
   }
 });
 
-transport.sendMail(message, (e, res) => {
-  console.log(e || res);
-});
+transporter.sendMail(
+  {
+    from: "alpaca623@gmail.com",
+    to: "alpaca023@gmail.com",
+    subject: "testing mail transfer",
+    text: "메일 전송 테스트"
+  },
+  function(error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Success Send Email", info.response);
+    }
+  }
+);

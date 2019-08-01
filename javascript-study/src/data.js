@@ -34,54 +34,61 @@
  * 4. ?
  *************************************/
 
-const data = {
-  9929391: {
+export const data = [
+  {
+    tradeNumber : 9929391,
     userId: "test01",
-    price: 1492,
+    price: 1592,
     amount: 100,
     time: new Date('2019', '06', '30', '12','51'),
     priceType:0,
   },
-  9919391: {
+  {
+    tradeNumber : 9919391,
     userId: "test01",
-    price: 1492,
+    price: 11,
     amount: 100,
     time: new Date('2019', '06', '31', '11','30'),
     priceType:1,
   },
-  9959391: {
+  {
+    tradeNumber : 9959391,
     userId: "test01",
-    price: 1492,
+    price: 99923,
     amount: 100,
     time: new Date('2019', '06', '28', '13','51'),
     priceType:1,
   },
-  9329391: {
+  {
+    tradeNumber : 9329391,
     userId: "test01",
-    price: 1492,
+    price: 14234,
     amount: 100,
     time: new Date('2019', '06', '28', '13','58'),
     priceType:1,
   },
-  6629391: {
+  {
+    tradeNumber : 6629391,
     userId: "test01",
-    price: 1492,
+    price: 14923,
     amount: 100,
     time: new Date('2019', '06', '28', '12','52'),
     priceType:1,
   },
-  1329391: {
+  {
+    tradeNumber : 1329391,
     userId: "test01",
-    price: 1492,
+    price: 473,
     amount: 100,
     time: new Date('2019', '06', '18', '11','22'),
     priceType:0,
   },
-  9729391: {
+  {
+    tradeNumber : 9729391,
     userId: "test01",
-    price: 1492,
+    price: 933,
     amount: 100,
     time: new Date('2019', '06', '30', '09','13'),
     priceType:0,
   }
-};
+];
