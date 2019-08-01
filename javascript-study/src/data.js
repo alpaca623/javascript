@@ -33,62 +33,158 @@
  *        (매도인지, 매수인지 구분 필요 - 어떤 값?)
  * 4. ?
  *************************************/
-
 export const data = [
   {
-    tradeNumber : 9929391,
+    tradeNumber: 9929391,
     userId: "test01",
-    price: 1592,
+    price: 115900,
     amount: 100,
-    time: new Date('2019', '06', '30', '12','51'),
-    priceType:0,
+    time: new Date("2019", "06", "30", "12", "51"),
+    priceType: 0
   },
   {
-    tradeNumber : 9919391,
-    userId: "test01",
-    price: 11,
-    amount: 100,
-    time: new Date('2019', '06', '31', '11','30'),
-    priceType:1,
+    tradeNumber: 9929371,
+    userId: "test13",
+    price: 115800,
+    amount: 1012,
+    time: new Date("2019", "06", "30", "12", "51"),
+    priceType: 0
   },
   {
-    tradeNumber : 9959391,
+    tradeNumber: 9919391,
     userId: "test01",
-    price: 99923,
+    price: 115550,
     amount: 100,
-    time: new Date('2019', '06', '28', '13','51'),
-    priceType:1,
+    time: new Date("2019", "06", "31", "11", "30"),
+    priceType: 1
   },
   {
-    tradeNumber : 9329391,
+    tradeNumber: 9959391,
     userId: "test01",
-    price: 14234,
+    price: 115250,
     amount: 100,
-    time: new Date('2019', '06', '28', '13','58'),
-    priceType:1,
+    time: new Date("2019", "06", "28", "13", "51"),
+    priceType: 1
   },
   {
-    tradeNumber : 6629391,
+    tradeNumber: 9329391,
     userId: "test01",
-    price: 14923,
+    price: 115200,
     amount: 100,
-    time: new Date('2019', '06', '28', '12','52'),
-    priceType:1,
+    time: new Date("2019", "06", "28", "13", "58"),
+    priceType: 1
   },
   {
-    tradeNumber : 1329391,
+    tradeNumber: 6629391,
+    userId: "test01",
+    price: 115200,
+    amount: 100,
+    time: new Date("2019", "06", "28", "12", "52"),
+    priceType: 1
+  },
+  {
+    tradeNumber: 1329391,
     userId: "test01",
     price: 473,
-    amount: 100,
-    time: new Date('2019', '06', '18', '11','22'),
-    priceType:0,
+    amount: 115000,
+    time: new Date("2019", "06", "18", "11", "22"),
+    priceType: 0
   },
   {
-    tradeNumber : 9729391,
+    tradeNumber: 9729391,
     userId: "test01",
-    price: 933,
+    price: 114900,
     amount: 100,
-    time: new Date('2019', '06', '30', '09','13'),
-    priceType:0,
+    time: new Date("2019", "06", "30", "09", "13"),
+    priceType: 0
   }
 ];
+
+/**
+ * 나와야 하는 데이터 형식을 구성해보자.
+ */
+const result = {
+  highList: [
+    {
+      tradeNumber: 6629391,
+      userId: "test021",
+      price: 115200,
+      amount: 100,
+      time: new Date("2019", "06", "28", "12", "52"),
+      priceType: 1
+    },
+    {
+      tradeNumber: 6629391,
+      userId: "test021",
+      price: 115200,
+      amount: 100,
+      time: new Date("2019", "06", "28", "12", "52"),
+      priceType: 1
+    }
+  ],
+  lowList: [
+    {
+      tradeNumber: 6629391,
+      userId: "test001",
+      price: 115200,
+      amount: 100,
+      time: new Date("2019", "06", "28", "12", "52"),
+      priceType: 1
+    },
+    {
+      tradeNumber: 6629391,
+      userId: "test013",
+      price: 115200,
+      amount: 100,
+      time: new Date("2019", "06", "28", "12", "52"),
+      priceType: 1
+    }
+  ],
+  // 체결가 실시간 리스트
+  contractList: [
+    {
+      tradedPrice: 115200,
+      tradedAmount: 234,
+      time: new Date("2019", "06", "30", "12", "14"),
+      priceType : 0
+    },
+    {
+      tradedPrice: 115200,
+      tradedAmount: 234,
+      time: new Date("2019", "06", "30", "12", "14"),
+      priceType : 1
+    },
+    {
+      tradedPrice: 115200,
+      tradedAmount: 234,
+      time: new Date("2019", "06", "30", "12", "14"),
+      priceType : 0
+    },
+    {
+      tradedPrice: 115200,
+      tradedAmount: 234,
+      time: new Date("2019", "06", "30", "12", "14"),
+      priceType : 0
+    },
+    {
+      tradedPrice: 115200,
+      tradedAmount: 234,
+      time: new Date("2019", "06", "30", "12", "14"),
+      priceType : 1
+    },
+    {
+      tradedPrice: 115200,
+      tradedAmount: 234,
+      time: new Date("2019", "06", "30", "12", "14"),
+      priceType : 1
+    }
+  ],
+  info: {
+    lastPrice: 115250, // 현재가
+    pastPrice: 114250, // 전일가
+    netChange: "24.50%", // 전일대비
+    high: 115900, // 고가
+    low: 114250, // 저가
+    transactionPrice: "120백만" // 거래대금
+  }
+};
